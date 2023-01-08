@@ -1,0 +1,18 @@
+.calc-price {
+	padding: 50px 0;
+	&__container {
+		max-width: 1380px;
+	}
+
+	&__image {
+		position: relative;
+		padding-top: 50%;
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
