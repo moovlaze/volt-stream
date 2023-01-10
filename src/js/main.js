@@ -19,15 +19,14 @@ const openBurger = () => {
 	});
 };
 
-const slider = (selector) => {
+const slider = (selector, arrowNext, arrowPrev) => {
 	const swiper = new Swiper(selector, {
 		slidesPerView: "auto",
 		spaceBetween: 30,
 		navigation: {
-			nextEl: ".arrows__rigth",
-			prevEl: ".arrows__left",
+			nextEl: arrowNext,
+			prevEl: arrowPrev,
 		},
-		disabledClass: ".arrows__left",
 	});
 };
 
@@ -67,5 +66,6 @@ const galleryOpenAndClose = () => {
 };
 
 openBurger();
-slider(".reviews__slider");
+slider(".reviews__slider", ".reviews__arrow-rigth", ".reviews__arrow-left");
+slider(".works__slider", ".works__arrow-rigth", ".works__arrow-left");
 galleryOpenAndClose();
