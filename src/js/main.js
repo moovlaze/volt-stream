@@ -68,4 +68,9 @@ const galleryOpenAndClose = () => {
 openBurger();
 slider(".reviews__slider", ".reviews__arrow-rigth", ".reviews__arrow-left");
 slider(".works__slider", ".works__arrow-rigth", ".works__arrow-left");
+slider(
+	".certificates__slider",
+	".certificates__arrow-rigth",
+	".certificates__arrow-left"
+);
 galleryOpenAndClose();
