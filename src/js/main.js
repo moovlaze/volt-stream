@@ -65,6 +65,34 @@ const galleryOpenAndClose = () => {
 	};
 };
 
+const accordion = () => {
+	const accordions = document.querySelectorAll(
+		"[data-accordion-1] [data-accordion-item]"
+	);
+
+	accordions.forEach((el) => {
+		el.addEventListener("click", (e) => {
+			const content = el.querySelector(".accordion__content");
+
+			if (el.classList.contains("accordion_open")) {
+				el.classList.remove("accordion_open");
+			} else {
+				accordions.forEach((item) => {
+					item.classList.remove("accordion_open");
+					item.querySelector(".accordion__content").style.maxHeight = null;
+				});
+				el.classList.add("accordion_open");
+			}
+
+			if (el.classList.contains("accordion_open")) {
+				content.style.maxHeight = content.scrollHeight + "px";
+			} else {
+				content.style.maxHeight = null;
+			}
+		});
+	});
+};
+
 openBurger();
 slider(".reviews__slider", ".reviews__arrow-rigth", ".reviews__arrow-left");
 slider(".works__slider", ".works__arrow-rigth", ".works__arrow-left");
@@ -74,3 +102,4 @@ slider(
 	".certificates__arrow-left"
 );
 galleryOpenAndClose();
+accordion();
