@@ -19,6 +19,26 @@ const openBurger = () => {
 	});
 };
 
+const scrollToSections = () => {
+	const links = document.querySelectorAll(
+		".menu-header__list .menu-header__link"
+	);
+
+	links.forEach((link) => {
+		link.addEventListener("click", (e) => {
+			e.preventDefault();
+
+			const linkAttr = link.getAttribute("href");
+			const section = document.querySelector(linkAttr);
+
+			section.scrollIntoView({
+				behavior: "smooth",
+				block: "start",
+			});
+		});
+	});
+};
+
 const slider = (selector, arrowNext, arrowPrev) => {
 	const swiper = new Swiper(selector, {
 		slidesPerView: "auto",
@@ -94,6 +114,7 @@ const accordion = () => {
 };
 
 openBurger();
+scrollToSections();
 slider(".reviews__slider", ".reviews__arrow-rigth", ".reviews__arrow-left");
 slider(".works__slider", ".works__arrow-rigth", ".works__arrow-left");
 slider(
