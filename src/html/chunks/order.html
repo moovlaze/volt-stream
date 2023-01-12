@@ -8,10 +8,10 @@
 					alt="рабочий"
 				/>
 				<div class="order__decor_1">
-					<img src="../../img/order/decor-01.svg" alt="декор" />
+					<img src="../img/order/decor-01.svg" alt="декор" />
 				</div>
 				<div class="order__decor_2">
-					<img src="../../img/order/decor-02.svg" alt="декор" />
+					<img src="../img/order/decor-02.svg" alt="декор" />
 				</div>
 			</div>
 			<div class="order__info">
@@ -25,12 +25,16 @@
 						class="form-order__input"
 						name="userName"
 						placeholder="Ваше имя"
+						required
+						minlength="4"
 					/>
 					<input
 						type="tel"
 						class="form-order__input"
 						name="userTel"
 						placeholder="Ваш телефон"
+						required
+						minlength="11"
 					/>
 					<button type="submit" class="form-order__btn btn">Заказать</button>
 				</form>
